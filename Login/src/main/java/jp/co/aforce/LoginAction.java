@@ -52,8 +52,11 @@ public class LoginAction extends HttpServlet {
         
         if (customer != null) {
             session.setAttribute("customer", customer);
-            return "/jsp/loginout.jsp";
+            return "/jsp/loginout.jsp"; // 登录成功，转到成功页面
+        } else {
+            // 登录失败，设置错误消息
+            session.setAttribute("error", "IDもしくはパスワードが違います");
+            return "/jsp/loginin.jsp"; // 登录失败，转到失败页面
         }
-        return "/jsp/logininerror.jsp";
     }
 }
