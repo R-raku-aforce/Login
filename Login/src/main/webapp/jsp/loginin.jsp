@@ -2,7 +2,7 @@
 <%@include file="../header.html" %>
 
 <form action="<%= request.getContextPath() %>/jp/co/aforce/Login.action" method="post">
-    <p>ログイン名<input type="text" name="username"></p>
+    <p>ログイン名<input type="text" name="username" value="<%= request.getParameter("username") %>"></p>
     <p>パスワード<input type="password" name="password"></p>
     <p><input type="submit" value="ログイン"></p>
 
@@ -21,3 +21,4 @@
 </p>
 
 <%@include file="../footer.html" %>
+
